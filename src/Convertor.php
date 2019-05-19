@@ -329,6 +329,17 @@ class Convertor
     }
 
     /**
+     * List all available units
+     *
+     * @return   array - list of all available units
+     */
+    public function getAllUnits()
+    {
+        return $this->units;
+    }
+
+
+    /**
      * Convert from value to its base unit
      *
      * @param    number $value - from value
