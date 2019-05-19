@@ -20,11 +20,11 @@ use PHPUnit\Runner\Exception;
 
 class Convertor
 {
-    private $value = null; //value to convert
-    private $baseUnit = false; //base unit of value
+    protected $value = null; //value to convert
+    protected $baseUnit = false; //base unit of value
 
     //array to hold unit conversion functions
-    private $units = array();
+    protected $units = array();
 
 
     /**
@@ -190,7 +190,7 @@ class Convertor
      * @param    boolean $round (optional, default-true) - round or floor the conversion result
      * @return   array - results of the coversions
      */
-    private function toMany($unitList = [], $decimals = null, $round = true)
+    protected function toMany($unitList = [], $decimals = null, $round = true)
     {
 
         $resultList = array();
@@ -335,7 +335,7 @@ class Convertor
      * @param    array $unitArray - unit array from object units array
      * @return   number - converted value
      */
-    private function convertToBase($value, $unitArray)
+    protected function convertToBase($value, $unitArray)
     {
 
         if (is_callable($unitArray["conversion"])) {
